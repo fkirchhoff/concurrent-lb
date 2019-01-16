@@ -27,7 +27,7 @@ public class Driver implements Runnable {
             nodesState.put(chr, Boolean.TRUE);
         }
         //lb = new RWLockLoadBalancer<>(nodesState.keySet(), 1000);
-        lb = new OptimisticLockLoadBalancer<>(nodesState.keySet(), 1000);
+        lb = new ConcurrentLoadBalancer<>(nodesState.keySet(), 1000);
         clients = new Thread[nThreads];
         for (int i = 0; i < nThreads; i++) {
             clients[i] = new Thread(this::consume, "client-" + i);
