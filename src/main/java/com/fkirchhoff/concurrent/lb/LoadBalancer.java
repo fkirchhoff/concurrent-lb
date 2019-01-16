@@ -1,4 +1,4 @@
-package com.fk.concurrent.lb;
+package com.fkirchhoff.concurrent.lb;
 
 import java.util.function.Function;
 
